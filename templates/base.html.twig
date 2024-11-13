@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-MME1rrkEzQv7RnL1Fv7xBLS9DQ9e4DRojKSHNGdbZbl8kZ9fyDBHi1JHgkPcm06p" crossorigin="anonymous">
+    {% block stylesheets %}{% endblock %}
+          {# Inclure le fichier CSS ici #}
+</head>
+   {% block javascripts %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybG11ULyB4Ch+nMn1uhVK7qXTqRO32HUot4I8ABp4FgT4lWFF" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-ONfqGIBbqNjfT+8W3LF5z6VRlgcA85ALUpryo49pdtwPeYMOAMdpt8ONxMq1u4cJ" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand me-3" href="#">
+        <img src="{{ asset('Images/brand/logo_transparent.png') }}" alt="Logo" style="width: 120px; object-fit: cover" class="rounded-pill" >
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav mx-auto">
+
+         <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_accueil') }}">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('category_index') }}">Catégorie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=" {{ path('app_tousleplats') }}">Plats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+
+{% block body %}{% endblock %}
+
+
+
+
+    <footer class="bg-dark text-center py-3 ">
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2023 Nom du Site. Tous droits réservés.</p>
+      </footer>
+
+       
+
 </html>

@@ -1,0 +1,42 @@
+{# templates/categorie/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Catégories{% endblock %}
+
+    {%  block stylesheets  %}
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+  {% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+
+<div class="container">
+    <h1>tous les plats</h1>
+    <div class="row">
+        {% for plat in plats %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ asset('Images/food/' ~ plat.image) }}" class="card-img-top" alt="{{ plat.libelle }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plat.libelle }}</h5>
+                        <a href="{{ path('commande_new', {id: plat.id}) }}" class="btn btn-primary">Commander</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
