@@ -2,9 +2,7 @@
 
 namespace App\Form;
 
-
 use App\Entity\Contact;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -16,8 +14,11 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('objet')
+            ->add('nom')
+            ->add('prenom')
             ->add('email')
+            ->add('telephone')
+            ->add('adresse')
             ->add('message', TextareaType::class, [
                 'label' => 'Votre message',
                 'required' => false

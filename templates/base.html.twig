@@ -38,13 +38,15 @@
             <a class="nav-link" href=" {{ path('app_tousleplats') }}">Plats</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-    
+  
+  <img src="{{ asset('Images/bg2.jpg') }}" alt="Background Image" style="height: 600px; width:100%">
+
 
 {% block body %}{% endblock %}
 

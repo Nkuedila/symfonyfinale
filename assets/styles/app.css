@@ -74,65 +74,68 @@ h1 {
     background-color: #0056b3;
 }
 
-
-
-
-
-
-/* CSS pour le titre principal */
-
-
-/* Style général du tableau */
-.table {
-    text-align: center;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
-
-    justify-content: center;
-
-}
-
-.table th,
-.table td {
-    padding: 12px;
-    text-align: center;
+/* Container for the form */
+.my-custom-class-for-widget {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #272c42;
+    color: #ddd;
     border: 1px solid #ddd;
-}
-
-.table th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Style pour les liens d'actions */
-.table a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 5px;
-}
-
-.table a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Style pour le message "no records found" */
-.table td[colspan="10"] {
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
     text-align: center;
-    color: #888;
-    font-style: italic;
 }
 
-footer {
-    background-color: #343a40;
-    color: white;
-    bottom: 0;
+/* Style for form fields */
+.my-custom-class-for-widget input[type="quantity"],
+.my-custom-class-for-widget input[type="total"],
+.my-custom-class-for-widget input[type="datecommande"],
+.my-custom-class-for-widget select,
+.my-custom-class-for-widget textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.my-custom-class-for-widget .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.my-custom-class-for-widget .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Form labels */
+.my-custom-class-for-widget label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Error styling */
+.my-custom-class-for-widget .form-error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Optional additional styling for better form field alignment */
+.my-custom-class-for-widget .form-group {
+    margin-bottom: 15px;
 }
